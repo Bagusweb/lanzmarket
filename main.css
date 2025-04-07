@@ -215,15 +215,21 @@ header p {
 .testimonial-container {
   max-width: 1000px;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-height: 600px; /* batasi tinggi container */
+  overflow-y: auto; /* scroll ke bawah */
+  padding-right: 1rem; /* sedikit ruang supaya scrollbar tidak menutupi konten */
 }
 
 .testimonial {
   background: #252525;
   padding: 2rem;
   border-radius: 1rem;
-  margin: 1rem;
   box-shadow: 0 5px 15px rgba(0,0,0,0.2);
   position: relative;
+  flex: 0 0 auto;
 }
 
 .testimonial::before {
@@ -242,11 +248,13 @@ header p {
   font-style: italic;
   margin-bottom: 1rem;
   color: #ddd;
+  line-height: 1.6;
 }
 
 .testimonial-author {
   display: flex;
   align-items: center;
+  margin-top: 1rem;
 }
 
 .testimonial-author img {
@@ -260,11 +268,26 @@ header p {
 .testimonial-author-info h4 {
   color: #00f2fe;
   margin-bottom: 0.2rem;
+  font-size: 1.1rem;
 }
 
 .testimonial-author-info p {
   color: #aaa;
   font-size: 0.8rem;
+}
+
+/* Tambahan agar scrollbar terlihat lebih keren */
+.testimonial-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.testimonial-container::-webkit-scrollbar-thumb {
+  background: #00f2fe;
+  border-radius: 4px;
+}
+
+.testimonial-container::-webkit-scrollbar-track {
+  background: #333;
 }
 
 /* Features Section */
